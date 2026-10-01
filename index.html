@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Leone DiCamp — Sites, Sistemas e Automações
+  </title>
+  <meta content="Leone DiCamp desenvolve sites, sistemas sob medida e automações para negócios e profissionais. Conheça projetos, soluções e entre em contato." name="description"/>
+  <meta content="Leone DiCamp" name="author"/>
+  <meta content="#17130F" name="theme-color"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
+  --ink:#17130F;
+  --soft:rgba(23,19,15,.72);
+  --faint:rgba(23,19,15,.46);
+  --paper:#EFE7D3;
+  --light:#F8F3E4;
+  --gold:#B9863B;
+  --red:#9C4432;
+  --slate:#2E3B38;
+  --line:rgba(23,19,15,.14);
+  --radius:5px
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth
+}
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Space Grotesk',sans-serif;
+  line-height:1.55
+}
+.grain {
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:radial-gradient(rgba(23,19,16,.035) 1px,transparent 1px);
+  background-size:3px 3px;
+  opacity:.6;
+  z-index:0
+}
+.wrap {
+  max-width:1180px;
+  margin:auto;
+  padding:0 32px;
+  position:relative;
+  z-index:1
+}
+.mono {
+  font-family:'JetBrains Mono',monospace
+}
+.serif {
+  font-family:'Playfair Display',serif
+}
+.eyebrow {
+  font:500 11px 'JetBrains Mono',monospace;
+  letter-spacing:.12em;
+  color:var(--red);
+  text-transform:uppercase
+}
+.skip {
+  position:absolute;
+  left:-9999px
+}
+.skip:focus {
+  left:16px;
+  top:16px;
+  background:var(--ink);
+  color:var(--light);
+  padding:10px;
+  z-index:20
+}
+a {
+  color:inherit
+}
+:focus-visible {
+  outline:2px solid var(--red);
+  outline-offset:3px
+}
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(239,231,211,.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)
+}
+.nav {
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none
+}
+.mark {
+  width:42px;
+  height:42px;
+  border:1px solid var(--ink);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font:500 12px 'JetBrains Mono',monospace;
+  letter-spacing:.08em
+}
+.brand-text b {
+  display:block;
+  font-size:13px;
+  letter-spacing:.04em
+}
+.brand-text small {
+  display:block;
+  color:var(--faint);
+  font-size:10px;
+  letter-spacing:.08em
+}
+.navlinks {
+  display:flex;
+  gap:26px;
+  list-style:none;
+  margin:0;
+  padding:0
+}
+.navlinks a {
+  text-decoration:none;
+  font:500 11px 'JetBrains Mono',monospace;
+  letter-spacing:.08em;
+  color:var(--soft)
+}
+.navlinks a:hover {
+  color:var(--ink)
+}
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-decoration:none;
+  border:1px solid var(--ink);
+  border-radius:var(--radius);
+  padding:12px 19px;
+  font:500 12px 'JetBrains Mono',monospace;
+  transition:.2s
+}
+.btn:hover {
+  transform:translateY(-2px)
+}
+.solid {
+  background:var(--ink);
+  color:var(--light)
+}
+.outline {
+  background:transparent
+}
+.smallbtn {
+  padding:9px 14px;
+  font-size:11px
+}
+.hero {
+  min-height:78vh;
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:56px;
+  align-items:center;
+  padding:70px 0 50px
+}
+.hero h1 {
+  font:600 clamp(52px,8vw,92px)/.93 'Playfair Display',serif;
+  margin:15px 0 22px;
+  letter-spacing:-.045em
+}
+.hero h1 em {
+  display:block;
+  color:var(--red);
+  font-weight:500
+}
+.hero .lead {
+  font-size:clamp(17px,2vw,20px);
+  color:var(--soft);
+  max-width:620px
+}
+.actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px
+}
+.hero-card {
+  border:1px solid var(--line);
+  background:var(--light);
+  padding:26px;
+  position:relative;
+  box-shadow:16px 16px 0 rgba(185,134,59,.12)
+}
+.hero-card:before {
+  content:'PRANCHA 00';
+  position:absolute;
+  top:-11px;
+  left:20px;
+  background:var(--paper);
+  padding:2px 8px;
+  font:10px 'JetBrains Mono',monospace;
+  color:var(--red)
+}
+.browser {
+  border:1px solid var(--ink);
+  padding:14px
+}
+.browser-top {
+  display:flex;
+  gap:6px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:10px
+}
+.dot {
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--red)
+}
+.dot:nth-child(2) {
+  background:var(--gold)
+}
+.dot:nth-child(3) {
+  background:var(--slate)
+}
+.wire {
+  padding:28px 14px 10px
+}
+.wire .line {
+  height:8px;
+  background:var(--ink);
+  margin-bottom:10px
+}
+.wire .line:nth-child(2) {
+  width:68%;
+  opacity:.55
+}
+.wire .cta {
+  width:100px;
+  height:30px;
+  border:1px solid var(--red);
+  margin-top:22px
+}
+.wire-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:28px
+}
+.wire-grid span {
+  height:58px;
+  border:1px solid var(--line);
+  background:rgba(185,134,59,.08)
+}
+section {
+  padding:86px 0;
+  border-top:1px solid var(--line)
+}
+.head {
+  margin-bottom:38px
+}
+.head h2 {
+  font:600 clamp(30px,4vw,44px)/1.08 'Playfair Display',serif;
+  margin:8px 0 12px
+}
+.head p {
+  color:var(--soft);
+  max-width:680px;
+  margin:0
+}
+.services {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+.service {
+  background:var(--light);
+  border:1px solid var(--line);
+  padding:28px;
+  min-height:230px
+}
+.num {
+  font:11px 'JetBrains Mono',monospace;
+  color:var(--red)
+}
+.service h3 {
+  font:600 23px 'Playfair Display',serif;
+  margin:28px 0 10px
+}
+.service p {
+  color:var(--soft);
+  font-size:14px
+}
+.service ul {
+  margin:18px 0 0;
+  padding:0;
+  list-style:none;
+  font:11px 'JetBrains Mono',monospace;
+  color:var(--faint)
+}
+.service li {
+  margin:7px 0
+}
+.case {
+  background:var(--ink);
+  color:var(--light);
+  margin:0 calc(50% - 50vw);
+  padding:90px max(32px,calc((100vw - 1116px)/2))
+}
+.case .eyebrow {
+  color:#D88772
+}
+.case-grid {
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:58px;
+  align-items:center
+}
+.case h2 {
+  font:600 clamp(40px,6vw,68px)/1 'Playfair Display',serif;
+  margin:12px 0 18px
+}
+.case p {
+  color:rgba(248,243,228,.72)
+}
+.case-badges {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:25px 0
+}
+.badge {
+  border:1px solid rgba(248,243,228,.2);
+  border-radius:30px;
+  padding:6px 10px;
+  font:10px 'JetBrains Mono',monospace
+}
+.case-points {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:rgba(248,243,228,.15);
+  border:1px solid rgba(248,243,228,.15)
+}
+.case-point {
+  background:var(--ink);
+  padding:20px
+}
+.case-point b {
+  display:block;
+  font:500 12px 'JetBrains Mono',monospace;
+  color:#D9B071;
+  margin-bottom:6px
+}
+.case-point span {
+  font-size:13px;
+  color:rgba(248,243,228,.66)
+}
+.mock {
+  border:1px solid rgba(248,243,228,.22);
+  padding:16px;
+  transform:rotate(1.2deg)
+}
+.mock-screen {
+  min-height:360px;
+  background:linear-gradient(145deg,#241a16,#0f0d0b);
+  border:1px solid rgba(248,243,228,.12);
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between
+}
+.mock-title {
+  font:600 38px 'Playfair Display',serif
+}
+.mock-red {
+  color:#D88772
+}
+.mock-ticket {
+  border:1px dashed rgba(248,243,228,.3);
+  padding:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+.qr {
+  width:58px;
+  height:58px;
+  background:repeating-linear-gradient(45deg,#F8F3E4 0 4px,#17130F 4px 8px)
+}
+.niches {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px
+}
+.niche {
+  border-top:1px solid var(--ink);
+  padding:22px 0 28px;
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:18px
+}
+.niche .roman {
+  font:11px 'JetBrains Mono',monospace;
+  color:var(--red)
+}
+.niche h3 {
+  font:600 22px 'Playfair Display',serif;
+  margin:0 0 7px
+}
+.niche p {
+  margin:0;
+  color:var(--soft);
+  font-size:14px
+}
+.niche small {
+  display:block;
+  margin-top:12px;
+  font:10px 'JetBrains Mono',monospace;
+  color:var(--faint)
+}
+.process {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--line)
+}
+.step {
+  padding:26px;
+  border-right:1px solid var(--line);
+  background:var(--light)
+}
+.step:last-child {
+  border:0
+}
+.step b {
+  font:11px 'JetBrains Mono',monospace;
+  color:var(--red)
+}
+.step h3 {
+  font:600 19px 'Playfair Display',serif;
+  margin:28px 0 8px
+}
+.step p {
+  font-size:13px;
+  color:var(--soft);
+  margin:0
+}
+.about {
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:60px
+}
+.stats {
+  border:1px solid var(--line);
+  background:var(--light)
+}
+.stat {
+  display:flex;
+  justify-content:space-between;
+  padding:14px 18px;
+  border-bottom:1px solid var(--line);
+  font-size:13px
+}
+.stat:last-child {
+  border:0
+}
+.stat b {
+  font:500 11px 'JetBrains Mono',monospace;
+  color:var(--red)
+}
+.about-copy {
+  font-size:16px;
+  color:var(--soft)
+}
+.about-copy strong {
+  color:var(--ink)
+}
+.contact {
+  background:var(--light);
+  border:1px solid var(--line);
+  padding:52px;
+  text-align:center
+}
+.contact h2 {
+  font:600 clamp(30px,5vw,46px) 'Playfair Display',serif;
+  margin:8px 0 12px
+}
+.contact p {
+  color:var(--soft);
+  max-width:570px;
+  margin:0 auto
+}
+.contact .actions {
+  justify-content:center
+}
+footer {
+  border-top:1px solid var(--line);
+  padding:30px 0;
+  color:var(--faint);
+  font-size:12px
+}
+.foot {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap
+}
+.reveal {
+  opacity:0;
+  transform:translateY(18px);
+  transition:.65s
+}
+.reveal.in {
+  opacity:1;
+  transform:none
+}
+@media(max-width:900px) {
+  .hero,.case-grid,.about {
+    grid-template-columns:1fr
+  }
+  .hero {
+    min-height:auto
+  }
+  .services {
+    grid-template-columns:1fr
+  }
+  .process {
+    grid-template-columns:1fr 1fr
+  }
+  .step:nth-child(2) {
+    border-right:0
+  }
+  .hero-card {
+    max-width:600px
+  }
+  .case {
+    padding-top:70px;
+    padding-bottom:70px
+  }
+}
+@media(max-width:700px) {
+  .wrap {
+    padding:0 20px
+  }
+  .brand-text,.navlinks {
+    display:none
+  }
+  .hero {
+    padding:54px 0
+  }
+  .hero h1 {
+    font-size:55px
+  }
+  .niches {
+    grid-template-columns:1fr
+  }
+  .case-points {
+    grid-template-columns:1fr
+  }
+  .process {
+    grid-template-columns:1fr
+  }
+  .step {
+    border-right:0;
+    border-bottom:1px solid var(--line)
+  }
+  .contact {
+    padding:34px 20px
+  }
+  section {
+    padding:68px 0
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  * {
+    scroll-behavior:auto!important;
+    transition:none!important
+  }
+}
+  </style>
+ </head>
+ <body>
+  <a class="skip" href="#conteudo">
+   Pular para o conteúdo
+  </a>
+  <div aria-hidden="true" class="grain">
+  </div>
+  <header>
+   <div class="wrap nav">
+    <a class="brand" href="#topo">
+     <span class="mark">
+      LDC
+     </span>
+     <span class="brand-text">
+      <b>
+       LEONE DICAMP
+      </b>
+      <small>
+       DESENVOLVIMENTO DIGITAL
+      </small>
+     </span>
+    </a>
+    <ul class="navlinks">
+     <li>
+      <a href="#servicos">
+       SERVIÇOS
+      </a>
+     </li>
+     <li>
+      <a href="#case">
+       CASE
+      </a>
+     </li>
+     <li>
+      <a href="#solucoes">
+       SOLUÇÕES
+      </a>
+     </li>
+     <li>
+      <a href="#sobre">
+       SOBRE
+      </a>
+     </li>
+    </ul>
+    <a class="btn outline smallbtn" href="https://wa.me/5521967156104" rel="noopener" target="_blank">
+     WhatsApp ↗
+    </a>
+   </div>
+  </header>
+  <main id="conteudo">
+   <div class="wrap">
+    <section class="hero" id="topo">
+     <div>
+      <div class="eyebrow">
+       SITES • SISTEMAS • AUTOMAÇÕES
+      </div>
+      <h1>
+       Leone
+       <em>
+        DiCamp.
+       </em>
+      </h1>
+      <p class="lead">
+       Transformo ideias e necessidades de negócios em soluções digitais claras, funcionais e feitas sob medida.
+      </p>
+      <div class="actions">
+       <a class="btn solid" href="#case">
+        Conhecer projetos →
+       </a>
+       <a class="btn outline" href="https://wa.me/5521967156104" rel="noopener" target="_blank">
+        Falar sobre um projeto
+       </a>
+      </div>
+     </div>
+     <div aria-hidden="true" class="hero-card">
+      <div class="browser">
+       <div class="browser-top">
+        <i class="dot">
+        </i>
+        <i class="dot">
+        </i>
+        <i class="dot">
+        </i>
+       </div>
+       <div class="wire">
+        <div class="line">
+        </div>
+        <div class="line">
+        </div>
+        <div class="cta">
+        </div>
+        <div class="wire-grid">
+         <span>
+         </span>
+         <span>
+         </span>
+         <span>
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="servicos">
+     <div class="head">
+      <div class="eyebrow">
+       O QUE EU DESENVOLVO
+      </div>
+      <h2>
+       Soluções digitais que resolvem problemas reais.
+      </h2>
+      <p>
+       Do site de apresentação a uma plataforma completa: o projeto nasce da necessidade do negócio, não de um pacote pronto.
+      </p>
+     </div>
+     <div class="services">
+      <article class="service reveal">
+       <span class="num">
+        01 / WEB
+       </span>
+       <h3>
+        Sites &amp; Landing Pages
+       </h3>
+       <p>
+        Presença digital profissional para empresas, serviços, campanhas e profissionais autônomos.
+       </p>
+       <ul>
+        <li>
+         → institucional e portfólio
+        </li>
+        <li>
+         → páginas de conversão
+        </li>
+        <li>
+         → responsivo e mobile-first
+        </li>
+       </ul>
+      </article>
+      <article class="service reveal">
+       <span class="num">
+        02 / SYSTEM
+       </span>
+       <h3>
+        Sistemas sob medida
+       </h3>
+       <p>
+        Plataformas construídas em torno do fluxo real da operação, com integrações e área administrativa.
+       </p>
+       <ul>
+        <li>
+         → delivery e pedidos
+        </li>
+        <li>
+         → ticketing e eventos
+        </li>
+        <li>
+         → dashboards e agendamentos
+        </li>
+       </ul>
+      </article>
+      <article class="service reveal">
+       <span class="num">
+        03 / AUTO
+       </span>
+       <h3>
+        Automações &amp; IA
+       </h3>
+       <p>
+        Automação de tarefas repetitivas e atendimento para reduzir atrito e ganhar tempo na rotina.
+       </p>
+       <ul>
+        <li>
+         → WhatsApp e chatbots
+        </li>
+        <li>
+         → confirmações e lembretes
+        </li>
+        <li>
+         → integrações entre serviços
+        </li>
+       </ul>
+      </article>
+     </div>
+    </section>
+    <section class="case" id="case">
+     <div class="case-grid">
+      <div>
+       <div class="eyebrow">
+        CASE REAL • PROJETO EM DESTAQUE
+       </div>
+       <h2>
+        Underground
+        <span class="mock-red">
+         RJ
+        </span>
+       </h2>
+       <p>
+        Plataforma para evento automotivo com venda de ingressos digitais, checkout integrado e infraestrutura de processamento para uma operação real.
+       </p>
+       <div class="case-badges">
+        <span class="badge">
+         SUPABASE
+        </span>
+        <span class="badge">
+         EDGE FUNCTIONS
+        </span>
+        <span class="badge">
+         RESEND
+        </span>
+        <span class="badge">
+         QR CODE
+        </span>
+       </div>
+       <div class="case-points">
+        <div class="case-point">
+         <b>
+          CHECKOUT
+         </b>
+         <span>
+          Fluxo de compra e confirmação de ingresso.
+         </span>
+        </div>
+        <div class="case-point">
+         <b>
+          INGRESSO DIGITAL
+         </b>
+         <span>
+          Emissão e validação por QR Code.
+         </span>
+        </div>
+        <div class="case-point">
+         <b>
+          INTEGRAÇÕES
+         </b>
+         <span>
+          Pagamento, banco de dados e e-mail.
+         </span>
+        </div>
+        <div class="case-point">
+         <b>
+          RESILIÊNCIA
+         </b>
+         <span>
+          Fila de reprocessamento para falhas de entrega.
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="mock reveal">
+       <div class="mock-screen">
+        <div>
+         <div class="eyebrow">
+          UNDERGROUND RJ / EVENT TICKETING
+         </div>
+         <div class="mock-title">
+          Experiência digital
+          <br/>
+          <span class="mock-red">
+           do ingresso ao evento.
+          </span>
+         </div>
+        </div>
+        <div class="mock-ticket">
+         <div>
+          <small class="mono">
+           INGRESSO DIGITAL
+          </small>
+          <br/>
+          <b>
+           UNDERGROUND RJ
+          </b>
+         </div>
+         <div class="qr">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="solucoes">
+     <div class="head">
+      <div class="eyebrow">
+       SOLUÇÕES POR SEGMENTO
+      </div>
+      <h2>
+       Uma base. Diferentes negócios.
+      </h2>
+      <p>
+       Além dos projetos reais, desenvolvo conceitos funcionais para demonstrar como tecnologia pode ser aplicada a diferentes nichos.
+      </p>
+     </div>
+     <div class="niches">
+      <article class="niche reveal">
+       <div class="roman">
+        I
+       </div>
+       <div>
+        <h3>
+         Food service &amp; delivery
+        </h3>
+        <p>
+         Cardápio, carrinho, adicionais, retirada ou entrega e fechamento do pedido.
+        </p>
+        <small>
+         MODELO DE SISTEMA • DEMONSTRAÇÃO
+        </small>
+       </div>
+      </article>
+      <article class="niche reveal">
+       <div class="roman">
+        II
+       </div>
+       <div>
+        <h3>
+         Clínicas &amp; atendimento
+        </h3>
+        <p>
+         Chatbot, dúvidas frequentes, triagem inicial, agendamento, confirmação e lembretes.
+        </p>
+        <small>
+         AUTOMAÇÃO • DEMONSTRAÇÃO
+        </small>
+       </div>
+      </article>
+      <article class="niche reveal">
+       <div class="roman">
+        III
+       </div>
+       <div>
+        <h3>
+         Profissionais &amp; autônomos
+        </h3>
+        <p>
+         Landing pages e portfólios com foco em autoridade, apresentação de serviços e contato.
+        </p>
+        <small>
+         WEB DESIGN • MODELO
+        </small>
+       </div>
+      </article>
+      <article class="niche reveal">
+       <div class="roman">
+        IV
+       </div>
+       <div>
+        <h3>
+         Projetos sob encomenda
+        </h3>
+        <p>
+         Quando a necessidade não cabe em uma solução pronta, desenho o fluxo e construo a ferramenta.
+        </p>
+        <small>
+         SISTEMA PERSONALIZADO
+        </small>
+       </div>
+      </article>
+     </div>
+    </section>
+    <section id="processo">
+     <div class="head">
+      <div class="eyebrow">
+       PROCESSO
+      </div>
+      <h2>
+       Do problema à solução funcionando.
+      </h2>
+     </div>
+     <div class="process">
+      <article class="step">
+       <b>
+        01
+       </b>
+       <h3>
+        Entender
+       </h3>
+       <p>
+        Objetivo, público, operação e problema que precisa ser resolvido.
+       </p>
+      </article>
+      <article class="step">
+       <b>
+        02
+       </b>
+       <h3>
+        Desenhar
+       </h3>
+       <p>
+        Estrutura, experiência, fluxo e escopo antes do desenvolvimento.
+       </p>
+      </article>
+      <article class="step">
+       <b>
+        03
+       </b>
+       <h3>
+        Construir
+       </h3>
+       <p>
+        Interface, banco, integrações e regras necessárias ao projeto.
+       </p>
+      </article>
+      <article class="step">
+       <b>
+        04
+       </b>
+       <h3>
+        Entregar
+       </h3>
+       <p>
+        Testes, publicação, ajustes finais e orientação de uso.
+       </p>
+      </article>
+     </div>
+    </section>
+    <section id="sobre">
+     <div class="head">
+      <div class="eyebrow">
+       SOBRE
+      </div>
+      <h2>
+       Tecnologia com linguagem de negócio.
+      </h2>
+     </div>
+     <div class="about">
+      <div class="stats">
+       <div class="stat">
+        <span>
+         Nome profissional
+        </span>
+        <b>
+         LEONE DICAMP
+        </b>
+       </div>
+       <div class="stat">
+        <span>
+         Base
+        </span>
+        <b>
+         RIO DE JANEIRO
+        </b>
+       </div>
+       <div class="stat">
+        <span>
+         Atuação
+        </span>
+        <b>
+         REMOTA + LOCAL
+        </b>
+       </div>
+       <div class="stat">
+        <span>
+         Foco
+        </span>
+        <b>
+         SOLUÇÕES DIGITAIS
+        </b>
+       </div>
+      </div>
+      <div class="about-copy">
+       <p>
+        Sou
+        <strong>
+         Leone DiCamp
+        </strong>
+        , desenvolvedor focado em transformar necessidades de empresas e profissionais em produtos digitais úteis.
+       </p>
+       <p>
+        Meu trabalho pode começar em uma landing page simples e evoluir para sistemas com banco de dados, integrações, pagamentos ou automações. A tecnologia muda de acordo com o projeto; o objetivo continua sendo entregar algo claro, funcional e adequado à operação.
+       </p>
+      </div>
+     </div>
+    </section>
+    <section id="contato">
+     <div class="contact">
+      <div class="eyebrow">
+       NOVO PROJETO
+      </div>
+      <h2>
+       Vamos esboçar sua próxima solução?
+      </h2>
+      <p>
+       Conte o que você precisa resolver. A partir daí, organizamos a ideia, o escopo e a melhor forma de construir.
+      </p>
+      <div class="actions">
+       <a class="btn solid" href="https://wa.me/5521967156104" rel="noopener" target="_blank">
+        Falar no WhatsApp →
+       </a>
+       <a class="btn outline" href="mailto:leoneonix688@gmail.com">
+        Enviar e-mail
+       </a>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer>
+   <div class="wrap foot">
+    <span>
+     ©
+     <span id="year">
+     </span>
+     Leone DiCamp.
+    </span>
+    <span class="mono">
+     Feito à mão, refinado em código.
+    </span>
+   </div>
+  </footer>
+  <script>
+   document.getElementById('year').textContent=new Date().getFullYear();
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    e.target.classList.add('in');
+    obs.unobserve(e.target)
+  }
+}
+),{
+  threshold:.12
+}
+);
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+ </body>
+</html>
